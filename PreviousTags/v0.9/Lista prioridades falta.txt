@@ -1,0 +1,12 @@
+PRIORIDAD ALTA:
+	- transacciones al guardar las consultas en dos partes
+	- Interfaces dentro de todo prolijas.
+
+PRIORIDAD MEDIA:
+
+	- Al presionar TAB en los JTextArea no se transfiere el foco al próximo componente.Falta que los checkbox esten bien.
+	- Se permite el ingreso de Talla 0, tema del pintado con mouse;arreglar el keytyped desp de pintado con mouse - keyreleassed
+	- Nuevo paciente con volver mantiene filtrado
+
+
+

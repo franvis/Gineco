@@ -1,0 +1,24 @@
+Ha hacer:
+
+---- todas las paginas cierran el sistema con la cruz!??
+
+--------- Combobox para las fechas!!
+
+PARTES EN LAS Q DIVIDO EL PROYECTO:
+
+----> Registrar Paciente: Trabajando actualmente
+
+-- Fijarse si conviene guardar null o ""...Actualmente guardamos "" ...
+
+----> Principal (Busqueda de paciente,seleccion, etc): Pendiente
+
+
+OPTIMIZACIONES:
+
+----> Se podra guardar la lista de obras sociales? o hay q hacer siempre la consulta?
+
+
+
+OPACAR CAJAS DSP DE GUARDAR UN PACIENTE Y DAR LA POSIBILIDAD DE MODIFICAR O VOLVER
+
+CAMBIAR LA SECUENCIA DE TRAIDA DE LA BD DEL PACIENTE!!

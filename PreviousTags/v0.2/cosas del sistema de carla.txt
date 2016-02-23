@@ -1,0 +1,57 @@
+Ha hacer:
+
+---- todas las paginas cierran el sistema con la cruz!??
+
+--------- Combobox para las fechas!!
+
+
+
+PARTES EN LAS Q DIVIDO EL PROYECTO:
+
+----> Registrar Paciente: Trabajando actualmente
+
+----> Fijarse si conviene guardar null o ""...Actualmente guardamos "" ...
+
+----> Principal (Busqueda de paciente,seleccion, etc): Pendiente
+
+
+
+
+OPTIMIZACIONES:
+
+----> Se podra guardar la lista de obras sociales? o hay q hacer siempre la consulta?
+
+
+
+OPACAR CAJAS DSP DE GUARDAR UN PACIENTE Y DAR LA POSIBILIDAD DE MODIFICAR O VOLVER
+
+CAMBIAR LA SECUENCIA DE TRAIDA DE LA BD DEL PACIENTE!!
+
+
+
+
+
+
+
+
+cargar ya las obras sociales más conocidas y la opción sin obra social
+
+
+nuevo paciente - nueva obra social: no pongo nada, no valida.
+si cargó mal la nueva obra social, cómo la borra? --> gestión de obra sociales
+permitir pacientes sin obra social
+al guardar y limpiar, falta limpiar grupo sanguíneo y factor
+tabla principal ultima consulta --> falta el código para traerla!
+mostrar en tabla fechaNac sin hora
+si seleccionás un paciente y lo modificás y volvés a la principal quedan los botones habilitados...
+en HC, ver consulta y eliminar consulta no tienen ningún código asociado
+nuevo cliente: deshabilitar info y permitir modificar sin salir.
+confirmación de salida
+logueo de usuarios
+backupdb
+Y LOS TILDES!!! =P
+campos null en bd
+se crean filas para los antecedentes incluso aunque no los ingrese?
+por lejos mucho menos importante: dni + nrodni como clave primaria?
+
+

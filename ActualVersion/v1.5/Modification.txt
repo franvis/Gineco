@@ -1,0 +1,9 @@
+11/12/2012 - DENISE
+
+Referencias Solucionadas
+Mejora del método de renderización de celdas de las tablas (multilínea)
+Back Up Automático
+Back Up Automático 30 días
+Colores de Ventana
+Maximización de Ventanas
+Documentación de algunas clases
