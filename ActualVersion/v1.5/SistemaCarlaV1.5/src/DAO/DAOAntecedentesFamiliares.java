@@ -36,7 +36,7 @@ public class DAOAntecedentesFamiliares {
     public boolean registrarAntecedentesFamiliares(AntecedentesFamiliares af,long dni) {
         try {
             String cons =
-                    "INSERT INTO sistemaCarla.AntecedentesFamiliares VALUES (null,"
+                    "INSERT INTO sistemacarla.antecedentesfamiliares VALUES (null,"
                     + "?,"
                     + "?,"
                     + "?,"
@@ -80,7 +80,7 @@ public class DAOAntecedentesFamiliares {
      */ 
     public AntecedentesFamiliares getAntecedenteFamiliar(long dni) {
         af = null;
-        String consulta = "SELECT * FROM sistemaCarla.AntecedentesFamiliares WHERE dniPaciente = ?";
+        String consulta = "SELECT * FROM sistemacarla.antecedentesfamiliares WHERE dniPaciente = ?";
         try {
             conn = conexion.conectarBD();
             pst = conn.prepareStatement(consulta);
@@ -118,7 +118,7 @@ public class DAOAntecedentesFamiliares {
     public boolean actualizarAntecedente(AntecedentesFamiliares af,long dni) {
         try {
             String cons =
-                    "UPDATE sistemaCarla.AntecedentesFamiliares "
+                    "UPDATE sistemacarla.antecedentesfamiliares "
                     + "SET diabetes = ?,"
                     + "hipertension = ?,"
                     + "oncologicos = ?,"

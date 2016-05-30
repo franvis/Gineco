@@ -33,7 +33,7 @@ public class DAOAntecedentesGinecologicos {
     public boolean registrarAntecedentesGinecologicos(AntecedentesGinecologicos aginec,long dni) {
         try {
             conn = conexion.conectarBD();
-            String cons = "INSERT INTO sistemaCarla.AntecedentesGinecologicos VALUES (null,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
+            String cons = "INSERT INTO sistemacarla.antecedentesginecologicos VALUES (null,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
             pst =  conn.prepareStatement(cons);
             pst.setInt(1, aginec.getMenarca());
             pst.setString(2, aginec.getTelarca());
@@ -75,7 +75,7 @@ public class DAOAntecedentesGinecologicos {
     public AntecedentesGinecologicos getAntecedenteGinecologico(long dni)
     {
         ag = null;
-        String consulta = "SELECT * FROM sistemaCarla.AntecedentesGinecologicos WHERE dniPaciente = ?";
+        String consulta = "SELECT * FROM sistemacarla.antecedentesginecologicos WHERE dniPaciente = ?";
         try {
             conn = conexion.conectarBD();
             pst = conn.prepareStatement(consulta);
@@ -123,7 +123,7 @@ public class DAOAntecedentesGinecologicos {
     public boolean actualizarAntecedente(AntecedentesGinecologicos aginec, long dni) {
          try {
             conn = conexion.conectarBD();
-            String cons = "UPDATE sistemaCarla.AntecedentesGinecologicos SET "
+            String cons = "UPDATE sistemacarla.antecedentesginecologicos SET "
                     + "menarca = ?,"
                     + "telarca = ?,"
                     + "menopausia = ?,"

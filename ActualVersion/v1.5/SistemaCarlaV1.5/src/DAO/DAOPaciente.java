@@ -47,12 +47,12 @@ public class DAOPaciente {
             conn = conexion.conectarBD();
             String cons ="";
             if (p.getObraSocial().getId()!=0){
-                cons = "INSERT INTO sistemaCarla.Paciente VALUES (?,?,?,?,str_to_date(?, '%d/%c/%Y'),?,?,?,?)";
+                cons = "INSERT INTO sistemacarla.paciente VALUES (?,?,?,?,str_to_date(?, '%d/%c/%Y'),?,?,?,?)";
                 pst = conn.prepareStatement(cons);
                 pst.setInt(8,p.getObraSocial().getId());
                 pst.setString(9,p.getNumeroAfiliado());
             } else {
-                cons = "INSERT INTO sistemaCarla.Paciente (dni, nombre, apellido, telefono, fechaNacimiento, grupoSanguineo, factor, obrasocial, numeroAfiliado) VALUES (?,?,?,?,str_to_date(?, '%d/%c/%Y'),?,?,?,?)";
+                cons = "INSERT INTO sistemacarla.paciente (dni, nombre, apellido, telefono, fechaNacimiento, grupoSanguineo, factor, obrasocial, numeroAfiliado) VALUES (?,?,?,?,str_to_date(?, '%d/%c/%Y'),?,?,?,?)";
                 pst = conn.prepareStatement(cons);
                 pst.setNull(8,java.sql.Types.INTEGER);
                 pst.setString(9,"");
@@ -103,7 +103,7 @@ public class DAOPaciente {
     {
         pacientes = new LinkedList<>();
         
-        consulta = "SELECT dni, nombre, apellido, fechaNacimiento, MAX(fecha) AS fechaUltimaConsulta FROM sistemaCarla.paciente LEFT JOIN sistemaCarla.consulta ON dni=dniPaciente ";
+        consulta = "SELECT dni, nombre, apellido, fechaNacimiento, MAX(fecha) AS fechaUltimaConsulta FROM sistemacarla.paciente LEFT JOIN sistemacarla.consulta ON dni=dniPaciente ";
         
         String where = "";
         String orderBy = "";
@@ -201,7 +201,7 @@ public class DAOPaciente {
     {
         boolean verificacion = false;
         conn = conexion.conectarBD();
-        consulta = "SELECT 1 FROM sistemaCarla.paciente WHERE dni = ?";
+        consulta = "SELECT 1 FROM sistemacarla.paciente WHERE dni = ?";
         try {
             pst = conn.prepareStatement(consulta);
             pst.setLong(1, dni);
@@ -229,7 +229,7 @@ public class DAOPaciente {
     public Paciente getPacienteBasico(long dni)
     {
         p = null;
-        consulta = "SELECT dni, nombre, apellido, fechaNacimiento, MAX(fecha) AS fechaUltimaConsulta FROM sistemaCarla.paciente LEFT JOIN sistemaCarla.consulta ON dni=dniPaciente WHERE dni = ?";
+        consulta = "SELECT dni, nombre, apellido, fechaNacimiento, MAX(fecha) AS fechaUltimaConsulta FROM sistemacarla.paciente LEFT JOIN sistemacarla.consulta ON dni=dniPaciente WHERE dni = ?";
         try {
             conn = conexion.conectarBD();
             pst = conn.prepareStatement(consulta);
@@ -379,7 +379,7 @@ public class DAOPaciente {
         String cons = "";
         conn = conexion.conectarBD();
         if(p.getObraSocial().getId() != 0){
-            cons = "UPDATE sistemaCarla.Paciente SET "
+            cons = "UPDATE sistemacarla.paciente SET "
                     + "dni = ?,"
                     + "nombre = ?,"
                     + "apellido = ?,"
@@ -395,7 +395,7 @@ public class DAOPaciente {
             pst.setString(9, p.getNumeroAfiliado());
             pst.setLong(10, dniAnterior);
         } else {
-            cons = "UPDATE sistemaCarla.Paciente SET "
+            cons = "UPDATE sistemacarla.paciente SET "
                     + "dni = ?,"
                     + "nombre = ?,"
                     + "apellido = ?,"
@@ -450,7 +450,7 @@ public class DAOPaciente {
     public boolean borrarPaciente(long dni) {
         try {
             conn = conexion.conectarBD();
-            String cons = "DELETE FROM sistemaCarla.PACIENTE WHERE dni = ?";
+            String cons = "DELETE FROM sistemacarla.paciente WHERE dni = ?";
             pst = conn.prepareStatement(cons);
             pst.setLong(1, dni);
             return (pst.executeUpdate() > 0) ? true : false;
@@ -473,7 +473,7 @@ public class DAOPaciente {
         Paciente match = null;
         try {
             conn = conexion.conectarBD();
-            consulta = "SELECT dni, nombre, apellido FROM sistemaCarla.paciente WHERE obraSocial = ? AND numeroAfiliado = ?";
+            consulta = "SELECT dni, nombre, apellido FROM sistemacarla.paciente WHERE obraSocial = ? AND numeroAfiliado = ?";
             pst = conn.prepareStatement(consulta);
             pst.setInt(1, idObraSocial);
             pst.setString(2, numeroAfiliado);

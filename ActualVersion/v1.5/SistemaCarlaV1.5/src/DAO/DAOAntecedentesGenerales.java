@@ -34,7 +34,7 @@ public class DAOAntecedentesGenerales {
     public boolean registrarAntecedentesGenerales(AntecedentesGenerales agen,long dni) {
         try {
             conn = conexion.conectarBD();
-            String cons = "INSERT INTO sistemaCarla.AntecedentesGenerales VALUES (null,?, ?, ?, ?)";
+            String cons = "INSERT INTO sistemacarla.antecedentesgenerales VALUES (null,?, ?, ?, ?)";
             pst = conn.prepareStatement(cons);
             pst.setString(1, agen.getAntecedentesPersonales());
             pst.setString(2, agen.getAntecedentesQuirurgicos());
@@ -62,7 +62,7 @@ public class DAOAntecedentesGenerales {
      */ 
     public AntecedentesGenerales getAntecedenteGeneral(long dni) {
         ag = null;
-        String consulta = "SELECT * FROM sistemaCarla.AntecedentesGenerales WHERE dniPaciente = ?";
+        String consulta = "SELECT * FROM sistemacarla.antecedentesgenerales WHERE dniPaciente = ?";
         try {
             conn = conexion.conectarBD();
             pst = conn.prepareStatement(consulta);
@@ -96,7 +96,7 @@ public class DAOAntecedentesGenerales {
     public boolean actualizarAntecedente(AntecedentesGenerales agen,long dni) {
         try {
             conn = conexion.conectarBD();
-            String cons = "UPDATE sistemaCarla.AntecedentesGenerales SET "
+            String cons = "UPDATE sistemacarla.antecedentesgenerales SET "
                     + "antecedentesP = ?,"
                     + "antecedentesQ = ?,"
                     + "antecedentesT = ? "

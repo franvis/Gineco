@@ -45,7 +45,7 @@ public class DAOConsulta {
             conn = conexion.conectarBD();
             conn.setAutoCommit(false);  
             PreparedStatement insertConsulta =  conn.prepareStatement(
-                        "INSERT INTO sistemaCarla.Consulta VALUES (null,str_to_date(?, '%d/%c/%Y'),?,?,?,?,?,?,?)");
+                        "INSERT INTO sistemacarla.consulta VALUES (null,str_to_date(?, '%d/%c/%Y'),?,?,?,?,?,?,?)");
             insertConsulta.setString(1, c.getFecha());
             insertConsulta.setString(2, c.getMotivo());
             insertConsulta.setString(3, c.getTratamiento());
@@ -95,7 +95,7 @@ public class DAOConsulta {
     public long getIdUltimaConsulta(long dni)
     {
         conn = conexion.conectarBD();
-        String consulta = "SELECT MAX(idconsulta) AS idconsulta FROM SistemaCarla.consulta WHERE dniPaciente = ?";
+        String consulta = "SELECT MAX(idconsulta) AS idconsulta FROM sistemacarla.consulta WHERE dniPaciente = ?";
         long ultimaConsulta = 0;
         try {
             conn = conexion.conectarBD();
@@ -125,7 +125,7 @@ public class DAOConsulta {
      */
     public long getIdUltimaConsulta(Connection con, long dni) {
         conn = con;
-        String consulta = "SELECT MAX(idconsulta) AS idconsulta FROM SistemaCarla.consulta WHERE dniPaciente = ?";
+        String consulta = "SELECT MAX(idconsulta) AS idconsulta FROM sistemacarla.consulta WHERE dniPaciente = ?";
         long ultimaConsulta = 0;
         try {
             pst = conn.prepareStatement(consulta);
@@ -154,7 +154,7 @@ public class DAOConsulta {
     public LinkedList<Consulta> getAllConsultasTabla(long dni) {
         LinkedList<Consulta> consultas = new LinkedList<>();
         
-        String consulta = "SELECT idConsulta,fecha,motivo,diagnostico,tipoConsulta FROM sistemaCarla.Consulta WHERE dniPaciente = ? ORDER BY fecha DESC, idConsulta DESC";
+        String consulta = "SELECT idConsulta,fecha,motivo,diagnostico,tipoConsulta FROM sistemacarla.consulta WHERE dniPaciente = ? ORDER BY fecha DESC, idConsulta DESC";
         
         try {
             conn = conexion.conectarBD();
@@ -195,7 +195,7 @@ public class DAOConsulta {
      */
     public Consulta getConsultaCompleta(int id, long dni) {
         
-        String consulta = "SELECT * FROM sistemaCarla.Consulta WHERE dniPaciente = ? AND idConsulta = ?";
+        String consulta = "SELECT * FROM sistemacarla.consulta WHERE dniPaciente = ? AND idConsulta = ?";
         
         try {
             conn = conexion.conectarBD();
@@ -244,7 +244,7 @@ public class DAOConsulta {
         try {
             c = consulta;
             conn = conexion.conectarBD();
-            String cons = "UPDATE sistemaCarla.Consulta SET "
+            String cons = "UPDATE sistemacarla.consulta SET "
                     + "motivo = ?,"
                     + "tratamiento = ?,"
                     + "estudiosComplementarios = ?,"

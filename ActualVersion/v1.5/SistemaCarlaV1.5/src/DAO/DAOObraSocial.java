@@ -35,7 +35,7 @@ public class DAOObraSocial {
     {
         obras = new LinkedList<>();
         conn = conexion.conectarBD();
-        consulta = "SELECT * FROM OBRASOCIAL ORDER BY nombre ASC";
+        consulta = "SELECT * FROM obrasocial ORDER BY nombre ASC";
         try {
             pst = conn.prepareStatement(consulta);
             pst.executeQuery(consulta);
@@ -50,6 +50,7 @@ public class DAOObraSocial {
             pst.close();
         }
         catch (SQLException ex) {
+            System.out.println("Hubo un problema al consultar las Obras Sociales: " + ex.getMessage());
         }
         conexion.desconectarBD(conn);
         return obras;
@@ -63,7 +64,7 @@ public class DAOObraSocial {
     public boolean registrarObraSocial(ObraSocial o) {
         try {
             conn = conexion.conectarBD();
-            String cons = "INSERT INTO sistemaCarla.ObraSocial VALUES (null,?)";
+            String cons = "INSERT INTO sistemacarla.obrasocial VALUES (null,?)";
             pst = conn.prepareStatement(cons);
             pst.setString(1, o.getNombre());
             return (pst.executeUpdate() > 0) ? true : false;
@@ -84,7 +85,7 @@ public class DAOObraSocial {
     public boolean actualizarObraSocial(ObraSocial o) {
         try {
             conn = conexion.conectarBD();
-            String cons = "UPDATE sistemaCarla.ObraSocial SET nombre = ? WHERE idObraSocial = ?";
+            String cons = "UPDATE sistemacarla.obrasocial SET nombre = ? WHERE idObraSocial = ?";
             pst = conn.prepareStatement(cons);
             pst.setString(1, o.getNombre());
             pst.setInt(2, o.getId());
@@ -110,11 +111,11 @@ public class DAOObraSocial {
             conn = conexion.conectarBD();
             conn.setAutoCommit(false);
             PreparedStatement deleteObraSocial =  conn.prepareStatement(
-			"DELETE FROM sistemaCarla.ObraSocial WHERE idObraSocial = ? ");
+			"DELETE FROM sistemacarla.obrasocial WHERE idObraSocial = ? ");
             deleteObraSocial.setInt(1, o.getId());
             deleteObraSocial.executeUpdate();
             PreparedStatement updatePacientes = conn.prepareStatement(
-                        "UPDATE sistemaCarla.Paciente SET numeroAfiliado = '' WHERE obraSocial IS NULL");
+                        "UPDATE sistemacarla.paciente SET numeroAfiliado = '' WHERE obraSocial IS NULL");
             updatePacientes.executeUpdate();
             conn.commit();
             rtdo = true;
@@ -142,7 +143,7 @@ public class DAOObraSocial {
     * @return Obra Social buscada
     */
     public ObraSocial getObraSocial(int id) {
-        consulta = "SELECT * FROM OBRASOCIAL WHERE idObraSocial = ?";
+        consulta = "SELECT * FROM obrasocial WHERE idObraSocial = ?";
         try {
             conn = conexion.conectarBD();
             pst = conn.prepareStatement(consulta);

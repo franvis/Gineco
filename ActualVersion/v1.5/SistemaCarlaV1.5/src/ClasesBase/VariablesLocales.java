@@ -30,12 +30,12 @@ public class VariablesLocales {
 //    public static String host = "localhost";
 //    public static String port = "3306";
 //    public static String user = "root";
-//    public static String password = "root";
+//    public static String password = "fran";
 //    public static String db = "sistemacarla";
-//    public static String url = "jdbc:mysql://localhost:3306/sistemaCarla";
+//    public static String url = "jdbc:mysql://localhost:3306/sistemacarla";
 //    //Datos para el manejo de Archivos
 //    public static String rutaArchivoColor = "C:\\Program Files\\Sistema Ginecologico\\Archivos Auxiliares\\Color.dat";
-//    public static String rutaProcesoBackUp = "\"C:\\Program Files\\MySQL\\MySQL Server 5.5\\bin\\mysqldump.exe\"";
+//    public static String rutaProcesoBackUp = "/usr/lib/mysql-workbench/mysqldump";
 //    public static String rutaAuxiliarBackUpAutomatico = "./src/ArchivosAuxiliares/BackUp.dat";
-//    public static String rutaCarpetaBackUps = "C:\\Program Files\\Sistema Ginecologico\\Backup Automatico\\";
+//    public static String rutaCarpetaBackUps = "/home/francisco/Escritorio/SISTEMA_CARLA/Backup Automatico/";
 }

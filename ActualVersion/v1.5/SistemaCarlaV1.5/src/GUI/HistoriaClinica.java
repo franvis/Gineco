@@ -275,9 +275,9 @@ public class HistoriaClinica extends javax.swing.JFrame {
         tblConsultas.getTableHeader().setReorderingAllowed(false);
         jScrollPane1.setViewportView(tblConsultas);
         if (tblConsultas.getColumnModel().getColumnCount() > 0) {
-            tblConsultas.getColumnModel().getColumn(0).setMinWidth(80);
-            tblConsultas.getColumnModel().getColumn(0).setPreferredWidth(80);
-            tblConsultas.getColumnModel().getColumn(0).setMaxWidth(80);
+            tblConsultas.getColumnModel().getColumn(0).setMinWidth(90);
+            tblConsultas.getColumnModel().getColumn(0).setPreferredWidth(90);
+            tblConsultas.getColumnModel().getColumn(0).setMaxWidth(90);
             tblConsultas.getColumnModel().getColumn(3).setMinWidth(140);
             tblConsultas.getColumnModel().getColumn(3).setPreferredWidth(140);
             tblConsultas.getColumnModel().getColumn(3).setMaxWidth(140);

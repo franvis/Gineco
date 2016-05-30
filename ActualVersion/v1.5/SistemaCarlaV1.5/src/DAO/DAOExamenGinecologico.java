@@ -35,7 +35,7 @@ public class DAOExamenGinecologico {
     {
         try {
             conn = conexion.conectarBD();
-            String cons = "INSERT INTO sistemaCarla.ExamenGinecologico VALUES (null,?,?,?,?,?)";
+            String cons = "INSERT INTO sistemacarla.examenginecologico VALUES (null,?,?,?,?,?)";
             pst = conn.prepareStatement(cons);
             pst.setString(1, eg.getMamas());
             pst.setString(2, eg.getGenitourinario());
@@ -66,7 +66,7 @@ public class DAOExamenGinecologico {
     public void RegistrarExamGinec(ExamenGinecologico eg, long idConsulta, Connection conn) throws SQLException
     {
         try {
-            String cons = "INSERT INTO sistemaCarla.ExamenGinecologico VALUES (null,?,?,?,?,?)";
+            String cons = "INSERT INTO sistemacarla.examenginecologico VALUES (null,?,?,?,?,?)";
             pst = conn.prepareStatement(cons);
             pst.setString(1, eg.getMamas());
             pst.setString(2, eg.getGenitourinario());
@@ -86,7 +86,7 @@ public class DAOExamenGinecologico {
      */
     public ExamenGinecologico getExamenGinec(int id) {
         
-        String consulta = "SELECT * FROM sistemaCarla.ExamenGinecologico WHERE consulta = ?";
+        String consulta = "SELECT * FROM sistemacarla.examenginecologico WHERE consulta = ?";
                 
         try {
             conn = conexion.conectarBD();
@@ -124,7 +124,7 @@ public class DAOExamenGinecologico {
         try {
             conn = conexion.conectarBD();
             eg = examenGinecologico;
-            String cons = "UPDATE sistemaCarla.ExamenGinecologico SET mamas = ?, genitourinario = ?, bethesda = ? ,papycolpo = ? WHERE consulta = ?";
+            String cons = "UPDATE sistemacarla.examenginecologico SET mamas = ?, genitourinario = ?, bethesda = ? ,papycolpo = ? WHERE consulta = ?";
             pst = conn.prepareStatement(cons);
             pst.setString(1, eg.getMamas());
             pst.setString(2, eg.getGenitourinario());

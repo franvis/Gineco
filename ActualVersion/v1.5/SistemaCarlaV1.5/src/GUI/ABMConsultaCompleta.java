@@ -61,7 +61,7 @@ public class ABMConsultaCompleta extends javax.swing.JFrame {
         this.llenarCampos(paciente);
         c = Calendar.getInstance();
         dia = c.get(Calendar.DAY_OF_MONTH) +"";
-        mes = c.get(Calendar.MONTH)+1+"";
+        mes = (c.get(Calendar.MONTH)+1) < 10 ? ("0" + (c.get(Calendar.MONTH)+1)) : (c.get(Calendar.MONTH)+1 + "");
         año = c.get(Calendar.YEAR)+"";
         this.lblFecha.setText(dia+"/"+mes+"/"+año);
         if(tipoConsulta != 2)
